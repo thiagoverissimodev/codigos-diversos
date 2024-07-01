@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DragDrop</title>
+  </head>
+  <body>
+    <div id="drag-app">
+      <section class="drag-files">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <path
+            d="M112,208H72A56,56,0,1,1,85.92,97.74"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            points="120 160 152 128 184 160"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <line
+            x1="152"
+            y1="208"
+            x2="152"
+            y2="128"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <path
+            d="M80,128a80,80,0,1,1,112,73.34"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+        <h3>Importe suas imagens</h3>
+        <p>Arraste ou clique para fazer upload</p>
+        <input type="file" name="imagem[]" multiple id="file-input" />
+      </section>
+      <section class="container-files">
+        <!-- <div class="box uploading">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <path
+                d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+              <polyline
+                points="152 32 152 88 208 88"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+            </svg>
+          </div>
+          <div class="info">
+            <div class="filename">Imagem.png</div>
+            <div class="filesize">
+              <span>3 MB /</span>
+              <span>7 MB</span>
+            </div>
+            <div class="bar">
+              <progress value="45" max="100"></progress>
+              <span>46%</span>
+            </div>
+          </div>
+          <div class="btn-remove">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              title="Clique aqui para remover esta imagem"
+              viewBox="0 0 256 256"
+            >
+              <rect width="256" height="256" fill="none" />
+              <line
+                x1="200"
+                y1="56"
+                x2="56"
+                y2="200"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+              <line
+                x1="200"
+                y1="200"
+                x2="56"
+                y2="56"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="box done">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <path
+                d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+              <polyline
+                points="152 32 152 88 208 88"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+            </svg>
+          </div>
+          <div class="info">
+            <div class="filename">Imagem.png</div>
+            <div class="filesize">
+              <span>3 MB /</span>
+              <span>7 MB</span>
+            </div>
+            <div class="bar">
+              <progress value="100" max="100"></progress>
+              <span>100%</span>
+            </div>
+          </div>
+        </div>
+        <div class="box error">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <path
+                d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+              <polyline
+                points="152 32 152 88 208 88"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+            </svg>
+          </div>
+          <div class="info">
+            <div class="filename">Imagem.png</div>
+            <div class="filesize">
+              <span>3 MB /</span>
+              <span>7 MB</span>
+            </div>
+            <div class="bar">
+              <progress value="0" max="100"></progress>
+              <span>Erro</span>
+            </div>
+          </div>
+          <div class="action">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <polyline
+                points="24 56 24 104 72 104"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+              <path
+                d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+            </svg>
+          </div>
+        </div> -->
+      </section>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
